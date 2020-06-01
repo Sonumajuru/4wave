@@ -32,7 +32,8 @@ public class LoginActivity extends AppCompatActivity {
     private TextView _signUpLink;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
 
@@ -72,7 +73,8 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    public void login() {
+    public void login()
+    {
         Log.d(TAG, "Login");
 
         if (!validate()) {
@@ -120,7 +122,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_SIGNUP) {
             if (resultCode == RESULT_OK) {
@@ -133,28 +136,33 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
+    public void onBackPressed()
+    {
         // disable going back to the MainActivity
         moveTaskToBack(true);
     }
 
     @Override
-    protected void onStart() {
+    protected void onStart()
+    {
         super.onStart();
         mAuth.addAuthStateListener(mAuthListener);
     }
 
-    public void onLoginSuccess() {
+    public void onLoginSuccess()
+    {
         _loginButton.setEnabled(true);
         finish();
     }
 
-    public void onLoginFailed() {
+    public void onLoginFailed()
+    {
         Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
         _loginButton.setEnabled(true);
     }
 
-    public boolean validate() {
+    public boolean validate()
+    {
         boolean valid = true;
 
         String email = _emailText.getText().toString();

@@ -32,7 +32,8 @@ public class RegisterActivity extends AppCompatActivity {
     private TextView _loginLink;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_layout);
 
@@ -63,10 +64,12 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
-    public void signUp() {
+    public void signUp()
+    {
         Log.d(TAG, "SigUup");
 
-        if (!validate()) {
+        if (!validate())
+        {
             onSignUpFailed();
             return;
         }
@@ -131,43 +134,52 @@ public class RegisterActivity extends AppCompatActivity {
                 }, 3000);
     }
 
-    public void onSignUpSuccess() {
+    public void onSignUpSuccess()
+    {
         _signUpButton.setEnabled(true);
         setResult(RESULT_OK, null);
         finish();
     }
 
-    public void onSignUpFailed() {
+    public void onSignUpFailed()
+    {
         Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
 
         _signUpButton.setEnabled(true);
     }
 
-    public boolean validate() {
+    public boolean validate()
+    {
         boolean valid = true;
 
         String name = _nameText.getText().toString();
         String email = _emailText.getText().toString();
         String password = _passwordText.getText().toString();
 
-        if (name.isEmpty() || name.length() < 3) {
+        if (name.isEmpty() || name.length() < 3)
+        {
             _nameText.setError("at least 3 characters");
             valid = false;
-        } else {
+        }
+        else {
             _nameText.setError(null);
         }
 
-        if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+        if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches())
+        {
             _emailText.setError("enter a valid email address");
             valid = false;
-        } else {
+        }
+        else {
             _emailText.setError(null);
         }
 
-        if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
+        if (password.isEmpty() || password.length() < 4 || password.length() > 10)
+        {
             _passwordText.setError("between 4 and 10 alphanumeric characters");
             valid = false;
-        } else {
+        }
+        else {
             _passwordText.setError(null);
         }
 

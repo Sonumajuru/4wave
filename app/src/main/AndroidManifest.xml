@@ -26,7 +26,7 @@
         <activity android:name=".activities.LibraryActivity"/>
 
         <activity
-            android:name="com.fourwave.activities.SplashActivity"
+            android:name=".activities.SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,9 +34,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.fourwave.activities.ProfileActivity" />
-        <activity android:name="com.fourwave.activities.InspireActivity" />
-        <activity android:name="com.fourwave.activities.SettingActivity" />
+        <activity android:name=".activities.ProfileActivity" />
+        <activity android:name=".activities.InspireActivity" />
+        <activity android:name=".activities.SettingActivity" />
     </application>
 
 

@@ -34,7 +34,8 @@ public class InspireActivity extends AppCompatActivity {
     private WebView webView;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.inspire_layout);
 
@@ -53,18 +54,19 @@ public class InspireActivity extends AppCompatActivity {
         onNavigationItemSelected();
 
         startWebView("https://www.hotnewhiphop.com/songs/");
-
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.navigation_menu_header, menu);
         return(super.onCreateOptionsMenu(menu));
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
         int id = item.getItemId();
         switch (id){
             case R.id.action_profile:
@@ -85,13 +87,15 @@ public class InspireActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void setUpBottomNavigationView() {
+    private void setUpBottomNavigationView()
+    {
         Log.d(TAG, "setUpBottomNavigationView: Setting Up BottomNavigationView");
         fourWaveApp.setUpBottomNavigationView(fToolbar);
 
     }
 
-    private void onNavigationItemSelected() {
+    private void onNavigationItemSelected()
+    {
 
         fToolbar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -129,7 +133,8 @@ public class InspireActivity extends AppCompatActivity {
         });
     }
 
-    private void streamPlayer() {
+    private void streamPlayer()
+    {
         if (!isStreamed) {
             isStreamed = true;
             streamToolbar.setVisibility(View.VISIBLE);
@@ -139,8 +144,8 @@ public class InspireActivity extends AppCompatActivity {
         }
     }
 
-
-    private void startWebView(String url) {
+    private void startWebView(String url)
+    {
         webView.getSettings().setJavaScriptEnabled(true);
 
         webView.loadUrl(url);

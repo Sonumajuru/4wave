@@ -35,7 +35,8 @@ public class MenuActivity extends AppCompatActivity {
     private int mMenuId;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         supportRequestWindowFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION,
@@ -59,14 +60,16 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.navigation_menu_header, menu);
         return(super.onCreateOptionsMenu(menu));
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
         int id = item.getItemId();
         switch (id){
             case R.id.action_profile:
@@ -87,13 +90,15 @@ public class MenuActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void setUpBottomNavigationView() {
+    private void setUpBottomNavigationView()
+    {
         Log.d(TAG, "setUpBottomNavigationView: Setting Up BottomNavigationView");
         fourWaveApp.setUpBottomNavigationView(fToolbar);
 
     }
 
-    private void onNavigationItemSelected() {
+    private void onNavigationItemSelected()
+    {
 
         fToolbar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -133,11 +138,13 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
+    public void onBackPressed()
+    {
         finish();
     }
 
-    private void streamPlayer() {
+    private void streamPlayer()
+    {
         if (!isStreamed) {
             isStreamed = true;
             streamToolbar.setVisibility(View.VISIBLE);
