@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#85b1d3"
+    >
+
+    <LinearLayout
+        android:id="@+id/lin_all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical" >
+
+        <ImageView android:src="@drawable/logo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="24dp"
+            android:layout_gravity="center_horizontal"
+            tools:ignore="ContentDescription" />
+
+        <!--  Name Label -->
+            <EditText android:id="@+id/input_name"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:inputType="textCapWords"
+                android:layout_marginBottom="30dp"
+                android:autofillHints="@string/name"
+                android:hint="@string/name"
+                tools:ignore="UnusedAttribute" />
+
+        <!-- Email Label -->
+            <EditText android:id="@+id/input_email"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:inputType="textEmailAddress"
+                android:layout_marginBottom="30dp"
+                android:autofillHints="@string/email"
+                android:hint="@string/email"
+                tools:ignore="UnusedAttribute" />
+
+        <!-- Password Label -->
+            <EditText android:id="@+id/input_password"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:inputType="textPassword"
+                android:layout_marginBottom="30dp"
+                android:autofillHints="@string/password"
+                android:hint="@string/password"
+                tools:ignore="UnusedAttribute" />
+
+        <!-- SignUp Button -->
+        <Button
+            android:id="@+id/btn_signup"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="#d0dbdb"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:padding="12dp"
+            android:text="@string/create_account"/>
+
+        <TextView android:id="@+id/link_login"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="@string/already_a_member_login"
+            android:gravity="center"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

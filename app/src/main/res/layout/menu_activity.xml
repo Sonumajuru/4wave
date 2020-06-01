@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MenuActivity">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header_layout" />
+
+    <ScrollView
+        android:id="@+id/top_stream_layout"
+        android:layout_below="@id/header"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="#f2b8"
+        android:scrollbars="horizontal">
+
+        <WebView
+            android:id="@+id/top_stream_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/background_dark"/>
+
+    </ScrollView>
+
+    <ScrollView
+            android:id="@+id/recent_stream_layout"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_below="@id/top_stream_layout"
+            android:background="#f274b8"
+            android:scrollbars="horizontal">
+
+        <WebView
+            android:id="@+id/recent_stream_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_blue_light" />
+
+        </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/top_station_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="220dp"
+        android:layout_below="@id/recent_stream_layout"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="100dp"
+        android:layout_height="220dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="5dp"
+        android:background="#f2c4b8"
+        android:scrollbars="vertical">
+
+        <WebView
+            android:id="@+id/station_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </ScrollView>
+
+    <ScrollView
+        android:layout_width="100dp"
+        android:layout_height="220dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="15dp"
+        android:background="#635229"
+        android:scrollbars="vertical">
+
+        <WebView
+            android:id="@+id/station_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </ScrollView>
+
+    <ScrollView
+        android:layout_width="100dp"
+        android:layout_height="220dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="15dp"
+        android:background="#c5b7cc"
+        android:scrollbars="vertical">
+
+        <WebView
+            android:id="@+id/station_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </ScrollView>
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/footer"
+        layout="@layout/footer_layout" />
+
+</RelativeLayout>

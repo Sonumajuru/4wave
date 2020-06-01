@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item android:id="@+id/action_profile"
+        android:title="Profile" />
+
+    <item android:id="@+id/action_premium"
+        android:title="Premium" />
+
+    <item android:id="@+id/action_setting"
+        android:title="Setting" />
+
+    <item android:id="@+id/action_logOut"
+        android:title="Signout" />
+</menu>

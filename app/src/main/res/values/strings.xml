@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">4Wave</string>
+    <string name="email" />
+    <string name="password" />
+    <string name="login" />
+    <string name="no_account_yet_create_one" />
+    <string name="user_name" />
+    <string name="listeners" />
+    <string name="_125" />
+    <string name="following" />
+    <string name="_360" />
+    <string name="email_gmail_com" />
+    <string name="_4wave_id" />
+    <string name="normal_premium_user" />
+    <string name="follow_me" />
+    <string name="name" />
+    <string name="create_account" />
+    <string name="already_a_member_login" />
+    <string name="library" />
+    <string name="home" />
+    <string name="streaming" />
+    <string name="search" />
+    <string name="inspire" />
+    <string name="premium" />
+    <string name="profile" />
+    <string name="setting" />
+    <string name="signout" />
+</resources>
