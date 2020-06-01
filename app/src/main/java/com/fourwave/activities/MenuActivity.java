@@ -124,11 +124,11 @@ public class MenuActivity extends AppCompatActivity {
                     }
                     break;
                     case R.id.nav_search: {
-                        fourWaveApp.displaySearch(mContext,LibraryActivity.class);
+                        fourWaveApp.displaySearch(mContext,SearchActivity.class);
                     }
                     break;
                     case R.id.nav_inspire: {
-                        fourWaveApp.displayInspire(mContext,LibraryActivity.class);
+                        fourWaveApp.displayInspire(mContext,InspireActivity.class);
                     }
                     break;
                 }
@@ -145,10 +145,13 @@ public class MenuActivity extends AppCompatActivity {
 
     private void streamPlayer()
     {
-        if (!isStreamed) {
+        if (!isStreamed)
+        {
             isStreamed = true;
             streamToolbar.setVisibility(View.VISIBLE);
-        } else {
+        }
+        else
+        {
             isStreamed = false;
             streamToolbar.setVisibility(View.GONE);
         }

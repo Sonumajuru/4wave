@@ -19,13 +19,13 @@ import androidx.appcompat.widget.Toolbar;
 import com.fourwave.FourWaveApp;
 import com.fourwave.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.snackbar.Snackbar;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 public class SearchActivity extends AppCompatActivity {
 
     private static final String TAG = "SearchActivity";
     private SearchView searchView;
-    private RelativeLayout footerLayout;
     private FourWaveApp fourWaveApp;
     private Toolbar mToolbar;
     private BottomNavigationViewEx fToolbar;
@@ -41,7 +41,6 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.search_activity);
 
         searchView = findViewById(R.id.searchView);
-        footerLayout = findViewById(R.id.footer_layout);
 
         fourWaveApp = FourWaveApp.getInstance();
         mContext = this;
@@ -56,14 +55,17 @@ public class SearchActivity extends AppCompatActivity {
         onNavigationItemSelected();
 
         searchView.setQueryHint("Artist, songs, or stations");
-        if(!searchView.isFocused()) {
+        if(!searchView.isFocused())
+        {
             searchView.clearFocus();
         }
 
-        searchView.setOnSearchClickListener(new View.OnClickListener() {
+        searchView.setOnSearchClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
-                footerLayout.setVisibility(View.GONE);
+            public void onClick(View v)
+            {
+                fToolbar.setVisibility(View.INVISIBLE);
             }
         });
 
@@ -77,6 +79,7 @@ public class SearchActivity extends AppCompatActivity {
                     if(searchView.getQuery().toString().length() < 1)
                     {
                         searchView.setIconified(true); //close the search editor and make search icon again
+                        fToolbar.setVisibility(View.VISIBLE);
                     }
                     searchView.clearFocus();
                 }
@@ -92,10 +95,13 @@ public class SearchActivity extends AppCompatActivity {
 //            }
 //        });
 
-        searchView.setOnCloseListener(new SearchView.OnCloseListener() {
+        searchView.setOnCloseListener(new SearchView.OnCloseListener()
+        {
             @Override
-            public boolean onClose() {
-//                footerLayout.setVisibility(View.VISIBLE);
+            public boolean onClose()
+            {
+                searchView.clearFocus(); // close the keyboard on load
+                fToolbar.setVisibility(View.VISIBLE);
                 return true;
             }
         });
@@ -188,5 +194,12 @@ public class SearchActivity extends AppCompatActivity {
             isStreamed = false;
             streamToolbar.setVisibility(View.GONE);
         }
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        fToolbar.setVisibility(View.VISIBLE);
     }
 }

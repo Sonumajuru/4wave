@@ -1,5 +1,6 @@
 package com.fourwave.activities;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -58,6 +59,7 @@ public class PremiumActivity extends AppCompatActivity {
 
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     private void startWebView(String url)
     {
         webView.getSettings().setJavaScriptEnabled(true);

@@ -4,8 +4,11 @@
     package="com.fourwave">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
 
     <application
@@ -18,13 +21,6 @@
         android:theme="@style/SplashTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".activities.LoginActivity"/>
-        <activity android:name=".activities.RegisterActivity" />
-        <activity android:name=".activities.MenuActivity"/>
-        <activity android:name=".activities.PremiumActivity"/>
-        <activity android:name=".activities.SearchActivity"/>
-        <activity android:name=".activities.LibraryActivity"/>
-
         <activity
             android:name=".activities.SplashActivity"
             android:theme="@style/SplashTheme">
@@ -34,6 +30,12 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".activities.LoginActivity"/>
+        <activity android:name=".activities.RegisterActivity" />
+        <activity android:name=".activities.MenuActivity"/>
+        <activity android:name=".activities.PremiumActivity"/>
+        <activity android:name=".activities.SearchActivity"/>
+        <activity android:name=".activities.LibraryActivity"/>
         <activity android:name=".activities.ProfileActivity" />
         <activity android:name=".activities.InspireActivity" />
         <activity android:name=".activities.SettingActivity" />

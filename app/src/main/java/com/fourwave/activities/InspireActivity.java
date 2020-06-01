@@ -1,5 +1,6 @@
 package com.fourwave.activities;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -9,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -70,11 +72,11 @@ public class InspireActivity extends AppCompatActivity {
         int id = item.getItemId();
         switch (id){
             case R.id.action_profile:
-                fourWaveApp.displayProfile(InspireActivity.this, ProfileActivity.class);
+                fourWaveApp.displayProfile(this, ProfileActivity.class);
                 break;
 
             case R.id.action_premium:
-                fourWaveApp.displayPremium(InspireActivity.this, PremiumActivity.class);
+                fourWaveApp.displayPremium(this, PremiumActivity.class);
                 break;
 
             case R.id.action_setting:
@@ -144,12 +146,10 @@ public class InspireActivity extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     private void startWebView(String url)
     {
         webView.getSettings().setJavaScriptEnabled(true);
-
-        webView.loadUrl(url);
-
         // you need to setWebViewClient for forcefully open in your webview
         webView.setWebViewClient(new WebViewClient() {
             @Override
@@ -158,5 +158,7 @@ public class InspireActivity extends AppCompatActivity {
                 return true;
             }
         });
+        webView.loadUrl(url);
     }
+
 }
