@@ -7,17 +7,20 @@ import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.fourwave.R;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class SplashActivity extends AppCompatActivity {
 
     /** Duration of wait **/
     private static boolean splashLoaded = false;
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         if (!splashLoaded)
         {
             setContentView(R.layout.splashscreen_activity);
